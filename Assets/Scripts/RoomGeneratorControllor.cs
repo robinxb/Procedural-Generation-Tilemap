@@ -230,7 +230,7 @@ public class RoomGeneratorControllor : MonoBehaviour {
 					r.isHall = true;
 					halls.Add(r);
 
-					Hall = new Rect(x + dx , y, 1, dy);
+					Hall = new Rect(x + dx , y + (dy > 0 ? 0 : dy) , 1, (dy > 0 ? dy : -dy));
 					r = Instantiate(roomObj) as Room;
 					r.pos = Hall;
 					r.isHall = true;
@@ -242,7 +242,7 @@ public class RoomGeneratorControllor : MonoBehaviour {
 					r.isHall = true;
 					halls.Add(r);
 					
-					Hall = new Rect(x, y, 1, dy);
+					Hall = new Rect(x, y + (dy > 0 ? 0 : dy), 1, (dy > 0 ? dy : -dy));
 					r = Instantiate(roomObj) as Room;
 					r.pos = Hall;
 					r.isHall = true;
